@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 3: Support Operations & Escalation Prevention | Margaret V</title>
+<style>
+  :root {
+    --bg: #0f0f0f; --bg-elevated: #1a1a1a; --text: #e5e5e5;
+    --text-muted: #a3a3a3; --accent: #c9a96e; --accent-light: #d4b87a; --border: #2a2a2a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 15px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { opacity: 0.8; }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  .back-nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .back-nav a { font-size: 13px; font-weight: 600; }
+
+  .hero { padding: 50px 0 40px; text-align: center; border-bottom: 1px solid var(--border); }
+  .hero .tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 12px; }
+  .hero h1 { font-size: 30px; font-weight: 800; margin-bottom: 16px; }
+  .hero p { color: var(--text-muted); max-width: 640px; margin: 0 auto 24px; font-size: 16px; }
+  .hero-metrics { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+  .hero-metric { text-align: center; }
+  .hero-metric .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+  .hero-metric .lbl { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 18px; }
+  .section h2 { font-size: 20px; margin-bottom: 14px; }
+  .section p { color: var(--text-muted); margin-bottom: 12px; }
+  .section ul { padding-left: 20px; color: var(--text-muted); }
+  .section li { margin-bottom: 8px; }
+
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .problem-card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+  .problem-card h4 { font-size: 14px; margin-bottom: 6px; color: var(--text); }
+  .problem-card p { font-size: 13.5px; margin: 0; }
+
+  .phase-wrap { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+  .phase { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; display: flex; gap: 20px; align-items: flex-start; }
+  .phase-num { min-width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent); font-size: 14px; }
+  .phase h4 { font-size: 15px; margin-bottom: 6px; }
+  .phase ul { padding-left: 18px; margin: 0; }
+  .phase li { font-size: 13.5px; margin-bottom: 4px; }
+
+  .viz-wrap { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-top: 20px; }
+  .viz-title { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; font-weight: 700; }
+
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .result-card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 24px 16px; text-align: center; }
+  .result-card .num { font-size: 26px; font-weight: 800; color: var(--accent); display: block; margin-bottom: 4px; }
+  .result-card .lbl { font-size: 12px; color: var(--text-muted); }
+
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tool-tag { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 12px; color: var(--text-muted); }
+
+  .quote { border-left: 3px solid var(--accent); padding-left: 18px; margin-top: 20px; font-style: italic; color: var(--text-muted); font-size: 15px; }
+
+  @media (max-width: 640px) {
+    .problem-grid, .results-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="back-nav"><div class="container"><a href="index.html">&larr; Back to Portfolio</a></div></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="tag">Case Study 03</div>
+    <h1>Support Operations & Escalation Prevention</h1>
+    <p>Building proactive communication protocols and ticket management systems at KNOW App that eliminated escalations while handling high-volume enterprise support.</p>
+    <div class="hero-metrics">
+      <div class="hero-metric"><div class="num">Zero</div><div class="lbl">Escalations Maintained</div></div>
+      <div class="hero-metric"><div class="num">50-80</div><div class="lbl">Tickets Weekly</div></div>
+      <div class="hero-metric"><div class="num">100%</div><div class="lbl">SLA Compliance</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Context</div>
+    <p>At KNOW App, enterprise clients rely on the platform for critical business operations. When configuration issues, workflow errors, or product defects arise, fast and effective support is essential. I was responsible for managing the support queue alongside onboarding duties — typically handling 50 to 80 tickets per week across a growing base of enterprise accounts.</p>
+    <p>The risk was clear: without a structured approach, high ticket volumes would lead to delayed responses, frustrated clients, and escalations that could damage relationships and increase churn. My goal was to keep every client satisfied while maintaining operational efficiency.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Problems Identified</div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h4>Reactive Support Culture</h4>
+        <p>Tickets were handled as they arrived with no prioritization framework. Critical issues from enterprise clients sat in the same queue as minor queries, causing delays.</p>
+      </div>
+      <div class="problem-card">
+        <h4>No Early Warning System</h4>
+        <p>There was no structured way to spot patterns — recurring issues, at-risk accounts, or clients submitting multiple tickets — until they became serious problems.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Inconsistent Communication</h4>
+        <p>Clients were often left waiting for updates. Different team members communicated differently, creating confusion and eroding trust.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Knowledge Gaps</h4>
+        <p>Without documented resolution paths, the same issues were solved from scratch each time, wasting time and producing inconsistent outcomes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Approach</div>
+    <p>I designed a support operations framework focused on prevention, consistency, and speed. The initiative ran in parallel with onboarding work and became the backbone of our client operations.</p>
+    <div class="phase-wrap">
+      <div class="phase">
+        <div class="phase-num">01</div>
+        <div>
+          <h4>Ticket Analysis & Categorization</h4>
+          <ul>
+            <li>Audited 8 weeks of ticket data to identify top issue categories and frequency patterns</li>
+            <li>Created a tiered priority system: P1 (enterprise blocker), P2 (workflow issue), P3 (config query), P4 (general question)</li>
+            <li>Mapped average resolution times by category to set realistic internal targets</li>
+            <li>Identified 6 recurring issue types responsible for 60% of total ticket volume</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">02</div>
+        <div>
+          <h4>Proactive Communication Protocols</h4>
+          <ul>
+            <li>Built response time SLAs by tier: P1 within 2 hours, P2 within 4 hours, P3 within 8 hours, P4 within 24 hours</li>
+            <li>Created status update templates for clients so they knew what to expect at every stage</li>
+            <li>Introduced weekly check-in emails for enterprise accounts with open tickets</li>
+            <li>Set up internal alerts when a client submitted 3+ tickets in 7 days, triggering a proactive outreach</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">03</div>
+        <div>
+          <h4>Resolution Playbooks & Self-Service</h4>
+          <ul>
+            <li>Documented step-by-step resolution guides for the top 6 recurring issues</li>
+            <li>Created client-facing quick-reference guides for common configuration tasks</li>
+            <li>Built an internal knowledge base in Confluence for the support team</li>
+            <li>Trained the team on playbook usage to ensure consistent, fast resolutions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">04</div>
+        <div>
+          <h4>Tracking & Continuous Improvement</h4>
+          <ul>
+            <li>Built a tracking sheet in Excel to monitor ticket volumes, resolution times, and client satisfaction signals</li>
+            <li>Reviewed metrics weekly to spot trends and adjust priorities</li>
+            <li>Shared insights with product and engineering to fix root causes upstream</li>
+            <li>Refined SOPs based on team feedback and client outcomes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Execution Details</div>
+    <ul>
+      <li><strong>Ticket Triage:</strong> Every incoming ticket was categorized within 30 minutes using the new priority framework. Enterprise blockers were immediately flagged and assigned.</li>
+      <li><strong>Client Communication:</strong> I personally drafted and sent all P1 and P2 status updates to enterprise clients, ensuring they never had to ask for information.</li>
+      <li><strong>Cross-functional Coordination:</strong> When tickets revealed product bugs or feature gaps, I logged detailed Jira tickets with reproduction steps and client impact, then followed through to closure.</li>
+      <li><strong>Team Training:</strong> Conducted weekly 30-minute sessions with the support team on new playbooks, sharing wins and addressing edge cases.</li>
+      <li><strong>Feedback Loop:</strong> After resolving complex issues, I sent brief satisfaction check-ins to enterprise clients, using their input to refine our approach.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Results</div>
+    <div class="results-grid">
+      <div class="result-card"><span class="num">Zero</span><span class="lbl">Escalations<br>Maintained over 6 months</span></div>
+      <div class="result-card"><span class="num">100%</span><span class="lbl">SLA Compliance<br>All tiers met consistently</span></div>
+      <div class="result-card"><span class="num">60%</span><span class="lbl">Recurring Issues<br>Addressed via playbooks</span></div>
+      <div class="result-card"><span class="num">25%</span><span class="lbl">Error Reduction<br>Through documentation</span></div>
+      <div class="result-card"><span class="num">15+</span><span class="lbl">Enterprise Clients<br>Receiving proactive updates</span></div>
+      <div class="result-card"><span class="num">40+</span><span class="lbl">SOPs & Guides<br>Created for team and clients</span></div>
+    </div>
+
+    <!-- SVG: Ticket Flow Diagram -->
+    <div class="viz-wrap">
+      <div class="viz-title">Ticket Resolution Workflow</div>
+      <svg viewBox="0 0 700 200" style="width:100%;height:auto;">
+        <!-- Step 1 -->
+        <rect x="20" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="75" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Ticket Received</text>
+        <text x="75" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Categorize (P1-P4)</text>
+
+        <path d="M130 55 L155 55" stroke="#c9a96e" stroke-width="1.5" marker-end="url(#ar3)"/>
+
+        <!-- Step 2 -->
+        <rect x="155" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="210" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Triage & Assign</text>
+        <text x="210" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">SLA clock starts</text>
+
+        <path d="M265 55 L290 55" stroke="#c9a96e" stroke-width="1.5" marker-end="url(#ar3)"/>
+
+        <!-- Step 3 -->
+        <rect x="290" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="345" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Resolution</text>
+        <text x="345" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Playbook or custom fix</text>
+
+        <path d="M400 55 L425 55" stroke="#c9a96e" stroke-width="1.5" marker-end="url(#ar3)"/>
+
+        <!-- Step 4 -->
+        <rect x="425" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="480" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Client Update</text>
+        <text x="480" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Status + next steps</text>
+
+        <path d="M535 55 L560 55" stroke="#c9a96e" stroke-width="1.5" marker-end="url(#ar3)"/>
+
+        <!-- Step 5 -->
+        <rect x="560" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="615" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Close & Learn</text>
+        <text x="615" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Log + feedback</text>
+
+        <!-- Proactive branch -->
+        <rect x="290" y="120" width="240" height="45" rx="6" fill="#1a1a1a" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="410" y="140" fill="#22c55e" font-size="10" text-anchor="middle" font-weight="600">Proactive Trigger</text>
+        <text x="410" y="155" fill="#a3a3a3" font-size="9" text-anchor="middle">3+ tickets in 7 days → outreach + account review</text>
+        <path d="M345 80 L345 110 L410 110 L410 120" stroke="#22c55e" stroke-width="1" stroke-dasharray="3 2" fill="none"/>
+
+        <text x="350" y="185" fill="#a3a3a3" font-size="11" text-anchor="middle">Every ticket follows a clear path. Proactive triggers catch at-risk accounts before they escalate.</text>
+        <defs>
+          <marker id="ar3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0,0 L0,8 L7,4 z" fill="#c9a96e"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- SVG: Weekly Ticket Volume Trend -->
+    <div class="viz-wrap">
+      <div class="viz-title">Weekly Ticket Volume & Resolution Trend</div>
+      <svg viewBox="0 0 700 180" style="width:100%;height:auto;">
+        <!-- Grid lines -->
+        <line x1="60" y1="30" x2="60" y2="150" stroke="#2a2a2a" stroke-width="1"/>
+        <line x1="60" y1="150" x2="660" y2="150" stroke="#2a2a2a" stroke-width="1"/>
+
+        <!-- Y labels -->
+        <text x="50" y="35" fill="#a3a3a3" font-size="10" text-anchor="end">80</text>
+        <text x="50" y="75" fill="#a3a3a3" font-size="10" text-anchor="end">60</text>
+        <text x="50" y="115" fill="#a3a3a3" font-size="10" text-anchor="end">40</text>
+        <text x="50" y="155" fill="#a3a3a3" font-size="10" text-anchor="end">20</text>
+
+        <!-- Bars: Received -->
+        <rect x="70" y="60" width="25" height="90" rx="2" fill="#3a2a2a"/>
+        <rect x="150" y="55" width="25" height="95" rx="2" fill="#3a2a2a"/>
+        <rect x="230" y="70" width="25" height="80" rx="2" fill="#3a2a2a"/>
+        <rect x="310" y="75" width="25" height="75" rx="2" fill="#3a2a2a"/>
+        <rect x="390" y="80" width="25" height="70" rx="2" fill="#3a2a2a"/>
+        <rect x="470" y="85" width="25" height="65" rx="2" fill="#3a2a2a"/>
+        <rect x="550" y="90" width="25" height="60" rx="2" fill="#3a2a2a"/>
+        <rect x="630" y="95" width="25" height="55" rx="2" fill="#3a2a2a"/>
+
+        <!-- Bars: Resolved -->
+        <rect x="98" y="65" width="25" height="85" rx="2" fill="#1a3a2a"/>
+        <rect x="178" y="60" width="25" height="90" rx="2" fill="#1a3a2a"/>
+        <rect x="258" y="75" width="25" height="75" rx="2" fill="#1a3a2a"/>
+        <rect x="338" y="80" width="25" height="70" rx="2" fill="#1a3a2a"/>
+        <rect x="418" y="85" width="25" height="65" rx="2" fill="#1a3a2a"/>
+        <rect x="498" y="90" width="25" height="60" rx="2" fill="#1a3a2a"/>
+        <rect x="578" y="95" width="25" height="55" rx="2" fill="#1a3a2a"/>
+        <rect x="658" y="100" width="25" height="50" rx="2" fill="#1a3a2a"/>
+
+        <!-- X labels -->
+        <text x="95" y="168" fill="#a3a3a3" font-size="9" text-anchor="middle">W1</text>
+        <text x="175" y="168" fill="#a3a3a3" font-size="9" text-anchor="middle">W2</text>
+        <text x="255" y="168" fill="#a3a3a3" font-size="9" text-anchor="middle">W3</text>
+        <text x="335" y="168" fill="#a3a3a3" font-size="9" text-anchor="middle">W4</text>
+        <text x="415" y="168" fill="#a3a3a3" font-size="9" text-anchor="middle">W5</text>
+        <text x="495" y="168" fill="#a3a3a3" font-size="9" text-anchor="middle">W6</text>
+        <text x="575" y="168" fill="#a3a3a3" font-size="9" text-anchor="middle">W7</text>
+        <text x="655" y="168" fill="#a3a3a3" font-size="9" text-anchor="middle">W8</text>
+
+        <!-- Legend -->
+        <rect x="500" y="10" width="12" height="12" rx="2" fill="#3a2a2a"/><text x="520" y="20" fill="#a3a3a3" font-size="10">Received</text>
+        <rect x="580" y="10" width="12" height="12" rx="2" fill="#1a3a2a"/><text x="600" y="20" fill="#a3a3a3" font-size="10">Resolved</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Tools & Methodologies</div>
+    <div class="tools">
+      <span class="tool-tag">Ticket Triage & Prioritization</span>
+      <span class="tool-tag">Proactive Communication</span>
+      <span class="tool-tag">SOP Development</span>
+      <span class="tool-tag">Excel Tracking & Reporting</span>
+      <span class="tool-tag">Jira (Bug Logging)</span>
+      <span class="tool-tag">Confluence (Knowledge Base)</span>
+      <span class="tool-tag">Slack (Team Coordination)</span>
+      <span class="tool-tag">Root Cause Analysis</span>
+      <span class="tool-tag">Client Satisfaction Check-ins</span>
+      <span class="tool-tag">Cross-functional Collaboration</span>
+      <span class="tool-tag">Escalation Prevention</span>
+      <span class="tool-tag">Continuous Improvement</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Key Learnings</div>
+    <ul>
+      <li><strong>Speed without communication feels like silence.</strong> Clients care as much about knowing what is happening as they do about the fix itself. A timely update prevents 80% of frustration.</li>
+      <li><strong>Patterns reveal root causes.</strong> Tracking ticket categories showed us that 60% of issues came from just 6 root causes. Fixing those upstream reduced volume significantly.</li>
+      <li><strong>Documentation is a force multiplier.</strong> Playbooks did not just speed up resolutions — they made the entire team consistent. A new team member could handle enterprise tickets on day three, not week three.</li>
+      <li><strong>Proactive outreach builds trust.</strong> When we reached out to clients before they had to ask, the relationship shifted from transactional to partnership. Zero escalations was a byproduct of that trust.</li>
+    </ul>
+    <div class="quote">"The best escalation is the one that never happens. That requires seeing around corners — and that only works when you have systems that surface signals early."</div>
+  </div>
+</section>
+
+<div class="back-nav" style="border-bottom:none; border-top:1px solid var(--border);">
+  <div class="container"><a href="index.html">&larr; Back to Portfolio</a></div>
+</div>
+
+</body>
+</html>

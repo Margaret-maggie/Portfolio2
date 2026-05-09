@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 1: Enterprise Onboarding Optimization | Margaret V</title>
+<style>
+  :root {
+    --bg: #0f0f0f; --bg-elevated: #1a1a1a; --text: #e5e5e5;
+    --text-muted: #a3a3a3; --accent: #c9a96e; --accent-light: #d4b87a; --border: #2a2a2a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 15px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { opacity: 0.8; }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  .back-nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .back-nav a { font-size: 13px; font-weight: 600; }
+
+  .hero { padding: 50px 0 40px; text-align: center; border-bottom: 1px solid var(--border); }
+  .hero .tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 12px; }
+  .hero h1 { font-size: 30px; font-weight: 800; margin-bottom: 16px; }
+  .hero p { color: var(--text-muted); max-width: 640px; margin: 0 auto 24px; font-size: 16px; }
+  .hero-metrics { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+  .hero-metric { text-align: center; }
+  .hero-metric .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+  .hero-metric .lbl { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 18px; }
+  .section h2 { font-size: 20px; margin-bottom: 14px; }
+  .section p { color: var(--text-muted); margin-bottom: 12px; }
+  .section ul { padding-left: 20px; color: var(--text-muted); }
+  .section li { margin-bottom: 8px; }
+
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .problem-card {
+    background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px;
+  }
+  .problem-card h4 { font-size: 14px; margin-bottom: 6px; color: var(--text); }
+  .problem-card p { font-size: 13.5px; margin: 0; }
+
+  .phase-wrap { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+  .phase {
+    background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px 24px; display: flex; gap: 20px; align-items: flex-start;
+  }
+  .phase-num {
+    min-width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--accent); font-size: 14px;
+  }
+  .phase h4 { font-size: 15px; margin-bottom: 6px; }
+  .phase ul { padding-left: 18px; margin: 0; }
+  .phase li { font-size: 13.5px; margin-bottom: 4px; }
+
+  .viz-wrap { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-top: 20px; }
+  .viz-title { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; font-weight: 700; }
+
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .result-card {
+    background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px;
+    padding: 24px 16px; text-align: center;
+  }
+  .result-card .num { font-size: 26px; font-weight: 800; color: var(--accent); display: block; margin-bottom: 4px; }
+  .result-card .lbl { font-size: 12px; color: var(--text-muted); }
+
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tool-tag {
+    background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 4px;
+    padding: 5px 12px; font-size: 12px; color: var(--text-muted);
+  }
+
+  .quote {
+    border-left: 3px solid var(--accent); padding-left: 18px; margin-top: 20px;
+    font-style: italic; color: var(--text-muted); font-size: 15px;
+  }
+
+  @media (max-width: 640px) {
+    .problem-grid, .results-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="back-nav">
+  <div class="container">
+    <a href="index.html">&larr; Back to Portfolio</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="tag">Case Study 01</div>
+    <h1>Enterprise Onboarding Optimization</h1>
+    <p>Transforming enterprise client onboarding at KNOW App through systematic process design, resulting in 30% faster deployments and 40% improved platform adoption.</p>
+    <div class="hero-metrics">
+      <div class="hero-metric"><div class="num">30%</div><div class="lbl">Faster Onboarding</div></div>
+      <div class="hero-metric"><div class="num">40%</div><div class="lbl">Adoption Improvement</div></div>
+      <div class="hero-metric"><div class="num">100+</div><div class="lbl">Enterprise Activations</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Context</div>
+    <p>In June 2025, I joined KNOW App as a Client Operations & Product Support Specialist. KNOW App is a B2B SaaS platform serving enterprise clients with complex configuration requirements. My mandate was clear: improve the enterprise onboarding experience and reduce time-to-value for clients.</p>
+    <p>Upon joining, I inherited a challenging operational environment. The company was experiencing rapid growth, onboarding 100+ enterprise clients, but lacked standardized processes. Each implementation was handled ad-hoc, leading to inconsistent experiences, delayed go-lives, and frustrated clients. My role was to bring structure, scalability, and measurable improvement to this critical function.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Problems Identified</div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h4>Extended Time-to-Value</h4>
+        <p>Average onboarding took 14 days, delaying client go-live and impacting satisfaction. Clients expected faster deployment to realize platform value.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Inconsistent Adoption</h4>
+        <p>Lack of structured onboarding led to poor platform adoption. Clients were not fully utilizing features, reducing stickiness and increasing churn risk.</p>
+      </div>
+      <div class="problem-card">
+        <h4>High Support Volume</h4>
+        <p>The team was managing 50–80 weekly tickets, many related to configuration errors and unclear processes, straining resources and SLA compliance.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Process Inconsistency</h4>
+        <p>No standardized workflows meant each implementation was handled differently, creating knowledge silos and making scaling impossible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Approach</div>
+    <p>I designed and executed a comprehensive transformation initiative using a structured, data-driven approach. The project spanned three months and involved cross-functional collaboration with implementation, support, and product teams.</p>
+    <div class="phase-wrap">
+      <div class="phase">
+        <div class="phase-num">01</div>
+        <div>
+          <h4>Discovery & Analysis</h4>
+          <ul>
+            <li>Mapped current-state onboarding journey with pain points</li>
+            <li>Analyzed 3 months of historical data to identify bottlenecks</li>
+            <li>Conducted stakeholder interviews with the implementation team</li>
+            <li>Surveyed 15+ enterprise clients for feedback</li>
+            <li>Performed root cause analysis on delays and errors</li>
+            <li>Identified key issue: lack of role-based configuration standards</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">02</div>
+        <div>
+          <h4>Solution Design</h4>
+          <ul>
+            <li>Created 40+ Standard Operating Procedures (SOPs)</li>
+            <li>Designed role-based dashboard configuration templates</li>
+            <li>Built parallel processing workflows to reduce dependencies</li>
+            <li>Developed escalation matrices for common blockers</li>
+            <li>Created client communication templates for milestones</li>
+            <li>Designed UAT testing protocols and validation checklists</li>
+            <li>Established metrics dashboard for tracking improvements</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">03</div>
+        <div>
+          <h4>Deployment & Scale</h4>
+          <ul>
+            <li>Trained implementation team on new playbooks</li>
+            <li>Delivered hands-on training to 15+ enterprise clients</li>
+            <li>Executed 100+ enterprise activations using the new process</li>
+            <li>Monitored metrics weekly and iterated on feedback</li>
+            <li>Achieved 100% SLA compliance throughout the transition</li>
+            <li>Documented lessons learned for continuous improvement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Execution Details</div>
+    <p>The transformation required hands-on execution across multiple workstreams. Here are the specific activities I led and the deliverables I produced:</p>
+    <ul>
+      <li><strong>Process Documentation:</strong> Created a comprehensive SOP library covering pre-onboarding requirements, configuration workflows, data validation protocols, and post-deployment support procedures.</li>
+      <li><strong>Configuration Design:</strong> Designed role-based dashboard templates for different user personas (Admin, Manager, End-user), reducing setup time and ensuring consistency.</li>
+      <li><strong>UAT & Validation:</strong> Developed structured User Acceptance Testing protocols with validation checklists, ensuring zero-defect releases and reducing post-launch issues.</li>
+      <li><strong>Data Analysis:</strong> Used Excel to track onboarding metrics, identify trends, and measure improvement. Created dashboards for leadership visibility into progress.</li>
+      <li><strong>Stakeholder Management:</strong> Coordinated with product, engineering, and support teams to align on priorities. Managed client expectations through proactive communication.</li>
+      <li><strong>Training & Enablement:</strong> Conducted workshops for internal teams and client end-users. Created training materials and quick-reference guides for self-service adoption.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Results</div>
+    <p>The transformation delivered significant, measurable improvements across all key performance indicators. Results were tracked over a 6-month period following implementation.</p>
+    <div class="results-grid">
+      <div class="result-card"><span class="num">30%</span><span class="lbl">Faster Onboarding<br>14 days to 9.8 days</span></div>
+      <div class="result-card"><span class="num">40%</span><span class="lbl">Adoption Improvement<br>within first quarter</span></div>
+      <div class="result-card"><span class="num">25%</span><span class="lbl">Error Reduction<br>through standardization</span></div>
+      <div class="result-card"><span class="num">100%</span><span class="lbl">SLA Compliance<br>throughout transition</span></div>
+      <div class="result-card"><span class="num">100+</span><span class="lbl">Successful Activations<br>using optimized process</span></div>
+      <div class="result-card"><span class="num">40+</span><span class="lbl">SOPs Created<br>for scalable operations</span></div>
+    </div>
+
+    <!-- SVG Visual: Before/After Onboarding Timeline -->
+    <div class="viz-wrap">
+      <div class="viz-title">Onboarding Timeline: Before vs After</div>
+      <svg viewBox="0 0 700 160" style="width:100%;height:auto;">
+        <!-- Before -->
+        <text x="60" y="25" fill="#a3a3a3" font-size="12" font-weight="600">BEFORE</text>
+        <rect x="60" y="35" width="580" height="28" rx="4" fill="#2a2a2a"/>
+        <rect x="60" y="35" width="580" height="28" rx="4" fill="#3a2a2a"/>
+        <text x="340" y="54" fill="#e5e5e5" font-size="12" text-anchor="middle">14 days average go-live</text>
+        <circle cx="60" cy="49" r="5" fill="#ef4444"/>
+        <circle cx="640" cy="49" r="5" fill="#ef4444"/>
+
+        <!-- After -->
+        <text x="60" y="105" fill="#a3a3a3" font-size="12" font-weight="600">AFTER</text>
+        <rect x="60" y="115" width="406" height="28" rx="4" fill="#2a2a2a"/>
+        <rect x="60" y="115" width="406" height="28" rx="4" fill="#1a3a2a"/>
+        <text x="263" y="134" fill="#e5e5e5" font-size="12" text-anchor="middle">9.8 days average go-live</text>
+        <circle cx="60" cy="129" r="5" fill="#22c55e"/>
+        <circle cx="466" cy="129" r="5" fill="#22c55e"/>
+
+        <!-- Arrow -->
+        <path d="M 466 129 L 580 129" stroke="#c9a96e" stroke-width="2" marker-end="url(#arrow)"/>
+        <text x="600" y="134" fill="#c9a96e" font-size="12" font-weight="700">30% faster</text>
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#c9a96e"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- SVG Visual: Process Flow -->
+    <div class="viz-wrap">
+      <div class="viz-title">Optimized Onboarding Process Flow</div>
+      <svg viewBox="0 0 700 120" style="width:100%;height:auto;">
+        <!-- Steps -->
+        <rect x="20" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="75" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Discovery</text>
+        <text x="75" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Requirements</text>
+
+        <path d="M130 55 L150 55" stroke="#c9a96e" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <rect x="150" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="205" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Config</text>
+        <text x="205" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Role-based setup</text>
+
+        <path d="M260 55 L280 55" stroke="#c9a96e" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <rect x="280" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="335" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">UAT</text>
+        <text x="335" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Validation & testing</text>
+
+        <path d="M390 55 L410 55" stroke="#c9a96e" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <rect x="410" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="465" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Training</text>
+        <text x="465" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Hands-on sessions</text>
+
+        <path d="M520 55 L540 55" stroke="#c9a96e" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <rect x="540" y="30" width="110" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1.5"/>
+        <text x="595" y="50" fill="#e5e5e5" font-size="10" text-anchor="middle" font-weight="600">Go-Live</text>
+        <text x="595" y="65" fill="#a3a3a3" font-size="9" text-anchor="middle">Proactive check-ins</text>
+
+        <text x="350" y="105" fill="#a3a3a3" font-size="11" text-anchor="middle">Parallel workstreams + SOPs at every stage = 30% faster delivery</text>
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+            <path d="M0,0 L0,8 L7,4 z" fill="#c9a96e"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Tools & Methodologies</div>
+    <div class="tools">
+      <span class="tool-tag">Process Mapping</span>
+      <span class="tool-tag">Excel (Advanced)</span>
+      <span class="tool-tag">Jira</span>
+      <span class="tool-tag">Confluence</span>
+      <span class="tool-tag">Slack</span>
+      <span class="tool-tag">UAT Testing</span>
+      <span class="tool-tag">SOP Documentation</span>
+      <span class="tool-tag">Root Cause Analysis</span>
+      <span class="tool-tag">Stakeholder Management</span>
+      <span class="tool-tag">Training & Enablement</span>
+      <span class="tool-tag">Agile/Scrum</span>
+      <span class="tool-tag">Workflow Optimization</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Key Learnings</div>
+    <ul>
+      <li><strong>Standardization drives scalability.</strong> Creating SOPs reduced cognitive load for the team and ensured consistent delivery. What seemed like extra work upfront became the foundation for handling 100+ activations without quality degradation.</li>
+      <li><strong>Proactive communication prevents escalations.</strong> Regular milestone updates and transparent communication about potential delays improved client satisfaction significantly, even when issues occurred.</li>
+      <li><strong>Data validation is critical.</strong> Implementing front-end validation in our configuration workflows reduced downstream errors by 25%, saving significant rework time.</li>
+      <li><strong>Role-based design accelerates adoption.</strong> Tailoring dashboard configurations to specific user personas (rather than one-size-fits-all) was the key driver of the 40% adoption improvement.</li>
+    </ul>
+    <div class="quote">"This project taught me that customer success is not just about managing tickets — it is about designing systems that enable customers to succeed from day one."</div>
+  </div>
+</section>
+
+<div class="back-nav" style="border-bottom:none; border-top:1px solid var(--border);">
+  <div class="container">
+    <a href="index.html">&larr; Back to Portfolio</a>
+  </div>
+</div>
+
+</body>
+</html>

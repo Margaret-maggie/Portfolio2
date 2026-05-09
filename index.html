@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margaret V | Customer Success & Operations Portfolio</title>
+<style>
+  :root {
+    --bg: #0f0f0f;
+    --bg-elevated: #1a1a1a;
+    --text: #e5e5e5;
+    --text-muted: #a3a3a3;
+    --accent: #c9a96e;
+    --accent-light: #d4b87a;
+    --border: #2a2a2a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+  a:hover { opacity: 0.8; }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,15,15,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .container {
+    display: flex; justify-content: space-between; align-items: center;
+    height: 56px;
+  }
+  .logo {
+    font-weight: 700; letter-spacing: 2px; font-size: 14px;
+    text-transform: uppercase; color: var(--text);
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: var(--text-muted); font-size: 13px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero {
+    padding: 100px 0 70px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 {
+    font-size: 42px; font-weight: 800; letter-spacing: 4px;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .hero .tagline {
+    font-size: 18px; color: var(--accent); font-weight: 500;
+    margin-bottom: 20px; letter-spacing: 1px;
+  }
+  .hero p {
+    max-width: 640px; margin: 0 auto 32px;
+    color: var(--text-muted); font-size: 16px; line-height: 1.7;
+  }
+  .btn {
+    display: inline-block; padding: 12px 28px;
+    border: 1px solid var(--accent); color: var(--accent);
+    font-size: 13px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; border-radius: 4px;
+  }
+  .btn:hover { background: var(--accent); color: var(--bg); opacity: 1; }
+
+  /* Section headers */
+  .section-title {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--accent); margin-bottom: 24px;
+  }
+  .section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .about-text { color: var(--text-muted); font-size: 15px; line-height: 1.75; }
+  .about-text strong { color: var(--text); }
+  .about-highlights { display: flex; flex-direction: column; gap: 16px; }
+  .highlight-item {
+    background: var(--bg-elevated); border: 1px solid var(--border);
+    padding: 16px 20px; border-radius: 6px;
+  }
+  .highlight-item h4 { font-size: 13px; color: var(--accent); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .highlight-item p { font-size: 13px; color: var(--text-muted); }
+
+  /* Achievements */
+  .achieve-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .achieve-card {
+    background: var(--bg-elevated); border: 1px solid var(--border);
+    padding: 28px 20px; text-align: center; border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .achieve-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .achieve-card .num {
+    font-size: 32px; font-weight: 800; color: var(--accent);
+    display: block; margin-bottom: 6px;
+  }
+  .achieve-card .label { font-size: 13px; color: var(--text-muted); }
+
+  /* Experience */
+  .exp-item { margin-bottom: 32px; }
+  .exp-item:last-child { margin-bottom: 0; }
+  .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
+  .exp-header h3 { font-size: 17px; font-weight: 700; }
+  .exp-header .company { color: var(--accent); font-weight: 600; font-size: 14px; }
+  .exp-header .date { color: var(--text-muted); font-size: 13px; }
+  .exp-desc { color: var(--text-muted); font-size: 14.5px; line-height: 1.7; }
+  .exp-desc ul { margin-top: 8px; padding-left: 18px; }
+  .exp-desc li { margin-bottom: 6px; }
+
+  /* Projects */
+  .project-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  .project-card {
+    background: var(--bg-elevated); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px; transition: all 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .project-card .tag {
+    font-size: 11px; color: var(--accent); text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 700; margin-bottom: 10px;
+  }
+  .project-card h3 { font-size: 18px; margin-bottom: 10px; }
+  .project-card p { color: var(--text-muted); font-size: 14px; line-height: 1.65; flex: 1; margin-bottom: 16px; }
+  .project-card .metrics { display: flex; gap: 16px; margin-bottom: 16px; }
+  .project-card .metric { font-size: 13px; }
+  .project-card .metric strong { color: var(--accent); font-size: 15px; }
+  .project-card .link { font-size: 13px; font-weight: 600; }
+
+  /* Skills */
+  .skills-wrap { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .skill-col h4 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--accent); margin-bottom: 12px;
+  }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 7px 0; border-bottom: 1px solid var(--border);
+    font-size: 13.5px; color: var(--text-muted);
+  }
+  .skill-list li:last-child { border-bottom: none; }
+  .skill-bar {
+    width: 80px; height: 4px; background: var(--border); border-radius: 2px;
+    overflow: hidden;
+  }
+  .skill-bar span {
+    display: block; height: 100%; background: var(--accent); border-radius: 2px;
+  }
+
+  /* Contact */
+  .contact-section { text-align: center; padding: 64px 0; }
+  .contact-section h2 { font-size: 24px; margin-bottom: 12px; }
+  .contact-section p { color: var(--text-muted); margin-bottom: 24px; }
+  .contact-links { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+  .contact-links a { font-size: 14px; }
+
+  /* Footer */
+  footer {
+    text-align: center; padding: 24px; color: var(--text-muted);
+    font-size: 12px; border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 720px) {
+    .about-grid, .project-grid, .skills-wrap { grid-template-columns: 1fr; }
+    .achieve-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Margaret V</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>MARGARET V</h1>
+    <div class="tagline">Customer Success & Operations</div>
+    <p>Driving measurable outcomes in B2B SaaS through structured onboarding, operational scaling, and cross-functional execution. I turn complex client challenges into clear processes, faster deployments, and lasting adoption.</p>
+    <a href="#projects" class="btn">View Case Studies &rarr;</a>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-title">About</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am a Customer Success and Operations Specialist with 3+ years of hands-on experience in B2B SaaS and global e-commerce. My work sits at the intersection of <strong>client outcomes</strong> and <strong>operational efficiency</strong> — whether that means cutting onboarding time by 30%, driving 40% adoption gains, or deploying tools to 250+ users across three countries.</p>
+        <p style="margin-top:14px;">At <strong>KNOW App</strong>, I lead enterprise onboarding and support operations, building the playbooks and SOPs that let teams scale without breaking. At <strong>Amazon</strong>, I re-engineered global compliance workflows, mentored international teams, and delivered one of the highest productivity improvements recorded in my division.</p>
+        <p style="margin-top:14px;">I believe great customer success is built on <strong>clear documentation, proactive communication, and systems that prevent problems before they happen</strong>.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <h4>Onboarding & Adoption</h4>
+          <p>100+ enterprise activations with structured playbooks and hands-on training.</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Process & Scale</h4>
+          <p>40+ SOPs, zero-defect UAT, and global tool deployments across 3 countries.</p>
+        </div>
+        <div class="highlight-item">
+          <h4>Cross-functional Execution</h4>
+          <p>Collaborating with product, engineering, and compliance to close gaps fast.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="section-title">Key Achievements</div>
+    <div class="achieve-grid">
+      <div class="achieve-card">
+        <span class="num">40%</span>
+        <span class="label">Platform Adoption Improvement<br>at KNOW App within Q1</span>
+      </div>
+      <div class="achieve-card">
+        <span class="num">93.5%</span>
+        <span class="label">Productivity Gain at Amazon<br>through process re-engineering</span>
+      </div>
+      <div class="achieve-card">
+        <span class="num">250+</span>
+        <span class="label">Global Associates Enabled<br>across India, Germany & China</span>
+      </div>
+      <div class="achieve-card">
+        <span class="num">30%</span>
+        <span class="label">Faster Client Onboarding<br>via structured playbooks</span>
+      </div>
+      <div class="achieve-card">
+        <span class="num">Zero</span>
+        <span class="label">Escalations Maintained<br>through proactive resolution</span>
+      </div>
+      <div class="achieve-card">
+        <span class="num">13x</span>
+        <span class="label">Amazon Ace of Spades Award<br>for exceptional performance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-title">Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <h3>Client Operations & Product Support Specialist</h3>
+          <span class="company">KNOW App</span>
+        </div>
+        <span class="date">June 2025 – Present | Chennai, India</span>
+      </div>
+      <div class="exp-desc">
+        <p>Lead end-to-end enterprise client onboarding and support for a B2B SaaS platform. Responsible for implementation playbooks, SOP development, UAT validation, and cross-functional coordination with product and engineering.</p>
+        <ul>
+          <li>Managed 100+ enterprise activations with 100% SLA compliance and reduced go-live time by 30%.</li>
+          <li>Drove 40% platform adoption improvement through role-based configurations and hands-on client training.</li>
+          <li>Handled 50–80 weekly support tickets with zero escalations via proactive communication and early resolution.</li>
+          <li>Built 40+ SOPs and a client engagement tracking framework to monitor progress and prevent issues.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div>
+          <h3>Senior Product Compliance Associate</h3>
+          <span class="company">Amazon</span>
+        </div>
+        <span class="date">Nov 2022 – May 2025 | Bengaluru, India (Global)</span>
+      </div>
+      <div class="exp-desc">
+        <p>Managed global product compliance operations across India, Germany, and China. Led process re-engineering, tool deployment, data validation at scale, and cross-border team mentoring.</p>
+        <ul>
+          <li>Delivered 93.5% productivity increase through automation design and process optimisation.</li>
+          <li>Deployed a regulatory documentation tool to 250+ associates, cutting manual effort by 40%.</li>
+          <li>Resolved cross-functional escalations with zero repeat incidents.</li>
+          <li>Created training materials and knowledge-sharing resources for teams across three countries.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-title">Case Studies</div>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="tag">KNOW App</div>
+        <h3>Enterprise Onboarding Optimization</h3>
+        <p>Redesigned the entire enterprise onboarding flow from ad-hoc to structured, cutting go-live time by 30% and lifting platform adoption by 40% within one quarter.</p>
+        <div class="metrics">
+          <div class="metric"><strong>30%</strong> faster onboarding</div>
+          <div class="metric"><strong>40%</strong> adoption gain</div>
+        </div>
+        <a href="project1_know.html" class="link">Read Case Study &rarr;</a>
+      </div>
+      <div class="project-card">
+        <div class="tag">Amazon</div>
+        <h3>Global Compliance Process Re-engineering</h3>
+        <p>Architected and deployed a regulatory documentation tool across three countries, achieving 93.5% productivity gains and standardising operations for 250+ associates.</p>
+        <div class="metrics">
+          <div class="metric"><strong>93.5%</strong> productivity</div>
+          <div class="metric"><strong>250+</strong> users enabled</div>
+        </div>
+        <a href="project2_amazon.html" class="link">Read Case Study &rarr;</a>
+      </div>
+      <div class="project-card">
+        <div class="tag">KNOW App</div>
+        <h3>Support Operations & Escalation Prevention</h3>
+        <p>Built proactive communication protocols and ticket categorisation systems that eliminated escalations entirely while handling 50–80 weekly tickets across enterprise accounts.</p>
+        <div class="metrics">
+          <div class="metric"><strong>Zero</strong> escalations</div>
+          <div class="metric"><strong>50-80</strong> tickets/week</div>
+        </div>
+        <a href="project3_know.html" class="link">Read Case Study &rarr;</a>
+      </div>
+      <div class="project-card">
+        <div class="tag">Amazon</div>
+        <h3>Global Documentation & Training Scale</h3>
+        <p>Created reusable documentation, SOPs, and virtual training resources that upskilled teams across three countries and reduced audit response time by 13.75%.</p>
+        <div class="metrics">
+          <div class="metric"><strong>3</strong> countries</div>
+          <div class="metric"><strong>13.75%</strong> faster audits</div>
+        </div>
+        <a href="project4_amazon.html" class="link">Read Case Study &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-title">Skills & Tools</div>
+    <div class="skills-wrap">
+      <div class="skill-col">
+        <h4>Customer Success</h4>
+        <ul class="skill-list">
+          <li>Client Onboarding <div class="skill-bar"><span style="width:95%"></span></div></li>
+          <li>Adoption Strategy <div class="skill-bar"><span style="width:90%"></span></div></li>
+          <li>Escalation Management <div class="skill-bar"><span style="width:92%"></span></div></li>
+          <li>SLA Management <div class="skill-bar"><span style="width:90%"></span></div></li>
+          <li>UAT & Validation <div class="skill-bar"><span style="width:88%"></span></div></li>
+          <li>Training & Enablement <div class="skill-bar"><span style="width:90%"></span></div></li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4>Operations</h4>
+        <ul class="skill-list">
+          <li>Process Re-engineering <div class="skill-bar"><span style="width:95%"></span></div></li>
+          <li>SOP Development <div class="skill-bar"><span style="width:95%"></span></div></li>
+          <li>Data Validation <div class="skill-bar"><span style="width:90%"></span></div></li>
+          <li>Root Cause Analysis <div class="skill-bar"><span style="width:88%"></span></div></li>
+          <li>Change Management <div class="skill-bar"><span style="width:85%"></span></div></li>
+          <li>Reporting & Metrics <div class="skill-bar"><span style="width:87%"></span></div></li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4>Tools</h4>
+        <ul class="skill-list">
+          <li>Jira & Confluence <div class="skill-bar"><span style="width:90%"></span></div></li>
+          <li>Advanced Excel / Sheets <div class="skill-bar"><span style="width:92%"></span></div></li>
+          <li>Slack <div class="skill-bar"><span style="width:90%"></span></div></li>
+          <li>Redash <div class="skill-bar"><span style="width:75%"></span></div></li>
+          <li>HubSpot (Certified) <div class="skill-bar"><span style="width:65%"></span></div></li>
+          <li>Zendesk (Certified) <div class="skill-bar"><span style="width:65%"></span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2>Let us Connect</h2>
+    <p>I am open to Customer Success, Operations, Onboarding, and Account Management roles in SaaS and high-growth startups.</p>
+    <div class="contact-links">
+      <a href="mailto:margaretmaggie996@gmail.com">Email</a>
+      <a href="https://linkedin.com/in/margaret-v">LinkedIn</a>
+      <a href="https://margaret-maggie.github.io/portfolio1">Portfolio</a>
+      <a href="Margaret_V_Resume.html" download>Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">Margaret V &copy; 2026</div>
+</footer>
+
+</body>
+</html>

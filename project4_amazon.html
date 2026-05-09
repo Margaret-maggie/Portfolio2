@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project 4: Global Documentation & Training Scale | Margaret V</title>
+<style>
+  :root {
+    --bg: #0f0f0f; --bg-elevated: #1a1a1a; --text: #e5e5e5;
+    --text-muted: #a3a3a3; --accent: #c9a96e; --accent-light: #d4b87a; --border: #2a2a2a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 15px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { opacity: 0.8; }
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  .back-nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .back-nav a { font-size: 13px; font-weight: 600; }
+
+  .hero { padding: 50px 0 40px; text-align: center; border-bottom: 1px solid var(--border); }
+  .hero .tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 12px; }
+  .hero h1 { font-size: 30px; font-weight: 800; margin-bottom: 16px; }
+  .hero p { color: var(--text-muted); max-width: 640px; margin: 0 auto 24px; font-size: 16px; }
+  .hero-metrics { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+  .hero-metric { text-align: center; }
+  .hero-metric .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+  .hero-metric .lbl { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+  .section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 18px; }
+  .section h2 { font-size: 20px; margin-bottom: 14px; }
+  .section p { color: var(--text-muted); margin-bottom: 12px; }
+  .section ul { padding-left: 20px; color: var(--text-muted); }
+  .section li { margin-bottom: 8px; }
+
+  .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .problem-card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+  .problem-card h4 { font-size: 14px; margin-bottom: 6px; color: var(--text); }
+  .problem-card p { font-size: 13.5px; margin: 0; }
+
+  .phase-wrap { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+  .phase { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; display: flex; gap: 20px; align-items: flex-start; }
+  .phase-num { min-width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--accent); font-size: 14px; }
+  .phase h4 { font-size: 15px; margin-bottom: 6px; }
+  .phase ul { padding-left: 18px; margin: 0; }
+  .phase li { font-size: 13.5px; margin-bottom: 4px; }
+
+  .viz-wrap { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px; padding: 28px; margin-top: 20px; }
+  .viz-title { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; font-weight: 700; }
+
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .result-card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 24px 16px; text-align: center; }
+  .result-card .num { font-size: 26px; font-weight: 800; color: var(--accent); display: block; margin-bottom: 4px; }
+  .result-card .lbl { font-size: 12px; color: var(--text-muted); }
+
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tool-tag { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 4px; padding: 5px 12px; font-size: 12px; color: var(--text-muted); }
+
+  .quote { border-left: 3px solid var(--accent); padding-left: 18px; margin-top: 20px; font-style: italic; color: var(--text-muted); font-size: 15px; }
+
+  @media (max-width: 640px) {
+    .problem-grid, .results-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="back-nav"><div class="container"><a href="index.html">&larr; Back to Portfolio</a></div></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="tag">Case Study 04</div>
+    <h1>Global Documentation & Training Scale</h1>
+    <p>Creating reusable documentation, SOPs, and virtual training resources that upskilled teams across three countries and reduced audit response time by 13.75%.</p>
+    <div class="hero-metrics">
+      <div class="hero-metric"><div class="num">3</div><div class="lbl">Countries Covered</div></div>
+      <div class="hero-metric"><div class="num">250+</div><div class="lbl">Associates Trained</div></div>
+      <div class="hero-metric"><div class="num">13.75%</div><div class="lbl">Faster Audit Response</div></div>
+      <div class="hero-metric"><div class="num">93.5%</div><div class="lbl">Productivity Gain</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Context</div>
+    <p>At Amazon, I was part of a global compliance operations team spanning India, Germany, and China. Each region had its own regulatory requirements, but the core operational principles needed to be consistent. The challenge was not just doing the work — it was making sure 250+ associates across three time zones could do the work correctly, consistently, and efficiently.</p>
+    <p>When I started, knowledge lived in scattered documents, email threads, and individual team members' heads. New associates took weeks to get up to speed. Experienced associates were interrupted constantly with questions. And when audits arrived, finding the right documentation was slow and stressful. I took ownership of fixing this through structured documentation and scalable training.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Problems Identified</div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h4>Knowledge Silos</h4>
+        <p>Critical process knowledge was held by a few senior associates. When they were unavailable, resolution times spiked and errors increased.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Inconsistent Onboarding</h4>
+        <p>New associates in each country were trained differently. There was no standard curriculum, leading to uneven quality and longer ramp-up times.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Scattered Documentation</h4>
+        <p>SOPs existed but were outdated, duplicated, or stored in different locations. Teams often worked from conflicting versions of the same process.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Slow Audit Preparation</h4>
+        <p>When regulatory audits occurred, teams spent days hunting for documentation and evidence. Response delays created risk and stress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Approach</div>
+    <p>I built a global documentation and training system from the ground up, designed to be reusable, consistent, and adaptable to regional needs. The work happened in four phases over approximately six months.</p>
+    <div class="phase-wrap">
+      <div class="phase">
+        <div class="phase-num">01</div>
+        <div>
+          <h4>Documentation Audit & Consolidation</h4>
+          <ul>
+            <li>Mapped all existing documentation across India, Germany, and China to identify gaps, duplicates, and outdated content</li>
+            <li>Interviewed senior associates in each region to capture tacit knowledge that was not written down</li>
+            <li>Created a single source of truth structure: global core SOPs + regional addendums for regulatory differences</li>
+            <li>Established a review cycle to keep documentation current</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">02</div>
+        <div>
+          <h4>SOP & Process Guide Development</h4>
+          <ul>
+            <li>Rewrote core compliance SOPs in plain, step-by-step language with screenshots and decision trees</li>
+            <li>Created quick-reference guides for high-frequency tasks to reduce time spent searching</li>
+            <li>Built escalation decision trees so associates knew exactly when and how to escalate</li>
+            <li>Added audit-ready appendices to each SOP, linking required evidence and documentation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">03</div>
+        <div>
+          <h4>Virtual Training & Knowledge Sharing</h4>
+          <ul>
+            <li>Designed a modular virtual training programme covering core processes, tool usage, and regional compliance nuances</li>
+            <li>Delivered live virtual sessions across time zones, recorded for asynchronous access</li>
+            <li>Created knowledge-sharing resources: FAQ sheets, troubleshooting guides, and best-practice playbooks</li>
+            <li>Set up a peer mentorship structure pairing new associates with experienced team members</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">04</div>
+        <div>
+          <h4>Audit Response Optimization</h4>
+          <ul>
+            <li>Organized all compliance documentation into a structured, searchable repository</li>
+            <li>Created audit response templates with pre-filled sections for common regulatory requests</li>
+            <li>Trained regional leads on rapid evidence gathering using the new documentation structure</li>
+            <li>Tracked audit response metrics and iterated on the process to drive continuous improvement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Execution Details</div>
+    <ul>
+      <li><strong>Documentation Standards:</strong> I established a consistent format for all SOPs — objective, scope, step-by-step instructions, decision trees, common errors, and related documents. This made every document predictable and easy to follow.</li>
+      <li><strong>Regional Customization:</strong> For each global SOP, I created a regional addendum section where country leads could document local regulatory requirements. This kept the core process unified while respecting regional differences.</li>
+      <li><strong>Training Delivery:</strong> I delivered virtual training sessions in small batches to allow for questions and interaction. Sessions were recorded and uploaded to a shared repository for associates who could not attend live.</li>
+      <li><strong>Knowledge Base:</strong> Built a searchable internal knowledge base where associates could find answers in under 60 seconds instead of asking a colleague and waiting for a response.</li>
+      <li><strong>Feedback Loops:</strong> After each training session, I collected feedback via short surveys and adjusted content for the next batch. I also held monthly office hours where associates could ask questions in an open forum.</li>
+      <li><strong>Audit Drills:</strong> Conducted mock audit exercises with each region to test how quickly they could gather evidence. These drills revealed weak spots in documentation organization that we fixed before real audits occurred.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Results</div>
+    <div class="results-grid">
+      <div class="result-card"><span class="num">93.5%</span><span class="lbl">Productivity Gain<br>Division-level recognition</span></div>
+      <div class="result-card"><span class="num">13.75%</span><span class="lbl">Faster Audit Response<br>Through structured docs</span></div>
+      <div class="result-card"><span class="num">250+</span><span class="lbl">Associates Enabled<br>Across 3 countries</span></div>
+      <div class="result-card"><span class="num">Zero</span><span class="lbl">Repeat Incidents<br>Systematic resolution paths</span></div>
+      <div class="result-card"><span class="num">3</span><span class="lbl">Countries Standardized<br>Core SOPs + regional addendums</span></div>
+      <div class="result-card"><span class="num">40%</span><span class="lbl">Manual Effort Reduced<br>Via documentation tool</span></div>
+    </div>
+
+    <!-- SVG: Documentation Hierarchy -->
+    <div class="viz-wrap">
+      <div class="viz-title">Documentation Structure: Global Core + Regional Addendums</div>
+      <svg viewBox="0 0 700 220" style="width:100%;height:auto;">
+        <!-- Global Core -->
+        <rect x="250" y="10" width="200" height="40" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="2"/>
+        <text x="350" y="30" fill="#e5e5e5" font-size="12" text-anchor="middle" font-weight="700">Global Core SOPs</text>
+        <text x="350" y="43" fill="#a3a3a3" font-size="10" text-anchor="middle">Universal processes & standards</text>
+
+        <!-- Branches -->
+        <line x1="350" y1="50" x2="350" y2="70" stroke="#c9a96e" stroke-width="1.5"/>
+        <line x1="150" y1="70" x2="550" y2="70" stroke="#c9a96e" stroke-width="1.5"/>
+        <line x1="150" y1="70" x2="150" y2="90" stroke="#c9a96e" stroke-width="1.5"/>
+        <line x1="350" y1="70" x2="350" y2="90" stroke="#c9a96e" stroke-width="1.5"/>
+        <line x1="550" y1="70" x2="550" y2="90" stroke="#c9a96e" stroke-width="1.5"/>
+
+        <!-- India -->
+        <rect x="50" y="90" width="200" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1"/>
+        <text x="150" y="110" fill="#e5e5e5" font-size="11" text-anchor="middle" font-weight="600">India</text>
+        <text x="150" y="125" fill="#a3a3a3" font-size="10" text-anchor="middle">Regional addendums</text>
+        <text x="150" y="138" fill="#a3a3a3" font-size="9" text-anchor="middle">+ Local compliance notes</text>
+
+        <!-- Germany -->
+        <rect x="250" y="90" width="200" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1"/>
+        <text x="350" y="110" fill="#e5e5e5" font-size="11" text-anchor="middle" font-weight="600">Germany</text>
+        <text x="350" y="125" fill="#a3a3a3" font-size="10" text-anchor="middle">Regional addendums</text>
+        <text x="350" y="138" fill="#a3a3a3" font-size="9" text-anchor="middle">+ EU regulatory requirements</text>
+
+        <!-- China -->
+        <rect x="450" y="90" width="200" height="50" rx="6" fill="#1a1a1a" stroke="#c9a96e" stroke-width="1"/>
+        <text x="550" y="110" fill="#e5e5e5" font-size="11" text-anchor="middle" font-weight="600">China</text>
+        <text x="550" y="125" fill="#a3a3a3" font-size="10" text-anchor="middle">Regional addendums</text>
+        <text x="550" y="138" fill="#a3a3a3" font-size="9" text-anchor="middle">+ Local marketplace rules</text>
+
+        <!-- Bottom: Supporting docs -->
+        <line x1="150" y1="140" x2="150" y2="155" stroke="#2a2a2a" stroke-width="1"/>
+        <line x1="350" y1="140" x2="350" y2="155" stroke="#2a2a2a" stroke-width="1"/>
+        <line x1="550" y1="140" x2="550" y2="155" stroke="#2a2a2a" stroke-width="1"/>
+
+        <rect x="30" y="155" width="120" height="28" rx="4" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+        <text x="90" y="173" fill="#a3a3a3" font-size="9" text-anchor="middle">Training Videos</text>
+
+        <rect x="190" y="155" width="120" height="28" rx="4" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+        <text x="250" y="173" fill="#a3a3a3" font-size="9" text-anchor="middle">Quick Guides</text>
+
+        <rect x="350" y="155" width="120" height="28" rx="4" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+        <text x="410" y="173" fill="#a3a3a3" font-size="9" text-anchor="middle">FAQ Sheets</text>
+
+        <rect x="510" y="155" width="120" height="28" rx="4" fill="#0f0f0f" stroke="#2a2a2a" stroke-width="1"/>
+        <text x="570" y="173" fill="#a3a3a3" font-size="9" text-anchor="middle">Audit Templates</text>
+
+        <text x="350" y="205" fill="#a3a3a3" font-size="11" text-anchor="middle">One global standard. Three regional adaptations. Supporting resources at every level.</text>
+      </svg>
+    </div>
+
+    <!-- SVG: Training Rollout Timeline -->
+    <div class="viz-wrap">
+      <div class="viz-title">Training & Documentation Rollout Timeline</div>
+      <svg viewBox="0 0 700 140" style="width:100%;height:auto;">
+        <!-- Timeline bar -->
+        <line x1="60" y1="70" x2="640" y2="70" stroke="#2a2a2a" stroke-width="3"/>
+
+        <!-- Milestones -->
+        <circle cx="100" cy="70" r="8" fill="#c9a96e"/>
+        <text x="100" y="50" fill="#e5e5e5" font-size="11" font-weight="600" text-anchor="middle">Month 1</text>
+        <text x="100" y="100" fill="#a3a3a3" font-size="10" text-anchor="middle">Doc audit</text>
+
+        <circle cx="240" cy="70" r="8" fill="#c9a96e"/>
+        <text x="240" y="50" fill="#e5e5e5" font-size="11" font-weight="600" text-anchor="middle">Month 2</text>
+        <text x="240" y="100" fill="#a3a3a3" font-size="10" text-anchor="middle">SOP rewrite</text>
+
+        <circle cx="380" cy="70" r="8" fill="#c9a96e"/>
+        <text x="380" y="50" fill="#e5e5e5" font-size="11" font-weight="600" text-anchor="middle">Month 3</text>
+        <text x="380" y="100" fill="#a3a3a3" font-size="10" text-anchor="middle">India training</text>
+
+        <circle cx="520" cy="70" r="8" fill="#c9a96e"/>
+        <text x="520" y="50" fill="#e5e5e5" font-size="11" font-weight="600" text-anchor="middle">Month 4-5</text>
+        <text x="520" y="100" fill="#a3a3a3" font-size="10" text-anchor="middle">Germany + China</text>
+
+        <circle cx="640" cy="70" r="8" fill="#22c55e"/>
+        <text x="640" y="50" fill="#e5e5e5" font-size="11" font-weight="600" text-anchor="middle">Month 6</text>
+        <text x="640" y="100" fill="#a3a3a3" font-size="10" text-anchor="middle">Global live</text>
+
+        <text x="350" y="130" fill="#a3a3a3" font-size="11" text-anchor="middle">Phased rollout with feedback loops between each region</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Tools & Methodologies</div>
+    <div class="tools">
+      <span class="tool-tag">SOP Development</span>
+      <span class="tool-tag">Technical Writing</span>
+      <span class="tool-tag">Virtual Training Delivery</span>
+      <span class="tool-tag">Knowledge Base Design</span>
+      <span class="tool-tag">Change Management</span>
+      <span class="tool-tag">Cross-cultural Communication</span>
+      <span class="tool-tag">Excel (Analytics & Tracking)</span>
+      <span class="tool-tag">Process Documentation</span>
+      <span class="tool-tag">Peer Mentorship Programs</span>
+      <span class="tool-tag">Audit Preparation</span>
+      <span class="tool-tag">Continuous Improvement</span>
+      <span class="tool-tag">Stakeholder Coordination</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">Key Learnings</div>
+    <ul>
+      <li><strong>Documentation is only useful if people can find it.</strong> We spent as much time organizing and indexing content as we did writing it. A brilliant SOP that no one can locate is worthless.</li>
+      <li><strong>Training must meet people where they are.</strong> Live sessions worked for some time zones, but recorded content and written guides were essential for others. A blended approach reached everyone.</li>
+      <li><strong>Regional leads are your force multipliers.</strong> Instead of me training every associate directly, I trained regional leads who then trained their teams. This scaled faster and built local ownership.</li>
+      <li><strong>Audit readiness is a habit, not a scramble.</strong> By building audit templates and evidence links into every SOP from day one, we turned a stressful fire drill into a routine process.</li>
+    </ul>
+    <div class="quote">"Knowledge that lives in one person's head is a liability. Knowledge that lives in a well-designed system is an asset that scales."</div>
+  </div>
+</section>
+
+<div class="back-nav" style="border-bottom:none; border-top:1px solid var(--border);">
+  <div class="container"><a href="index.html">&larr; Back to Portfolio</a></div>
+</div>
+
+</body>
+</html>
